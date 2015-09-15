@@ -1,16 +1,18 @@
 {
-  "name": "ol3-layerswitcher",
+  "name": "angular-openlayers-layerswitcher",
   "version": "1.0.2",
-  "homepage": "https://github.com/walkermatt/ol3-layerswitcher",
+  "homepage": "https://github.com/lewisjared/angular-openlayers-layerswitcher",
   "authors": [
-    "Matt Walker (http://longwayaround.org.uk)"
+    "Matt Walker (http://longwayaround.org.uk)",
+    "Jared Lewis <jared@jared.kiwi.nz>"
   ],
-  "description": "Layer switcher control for OpenLayers 3",
+  "description": "Layer switcher control for OpenLayers 3 adapted for used with angular-openlayers-directive",
   "main": [
-    "src/ol3-layerswitcher.js",
-    "src/ol3-layerswitcher.css"
+    "dist/angular-openlayers-layerswitcher.js",
+    "dist/angular-openlayers-layerswitcher.css"
   ],
   "keywords": [
+    "angular",
     "openlayers",
     "ol3",
     "layerswitcher"
@@ -21,5 +23,8 @@
     "node_modules",
     "bower_components",
     "test"
-  ]
+  ],
+  "dependencies": {
+    "angular-openlayers-directive": "~1.0.1"
+  }
 }

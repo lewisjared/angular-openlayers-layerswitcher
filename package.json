@@ -1,12 +1,15 @@
 {
-  "name": "ol3-layerswitcher",
+  "name": "angular-openlayers-layerswitcher",
   "version": "1.0.2",
   "description": "Layer switcher control for OpenLayers 3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/walkermatt/ol3-layerswitcher.git"
+    "url": "https://github.com/lewisjared/angular-openlayers-layerswitcher.git"
   },
-  "author": "Matt Walker (http://longwayaround.org.uk)",
+  "author": [
+    "Matt Walker (http://longwayaround.org.uk)",
+    "Jared Lewis <jared@jared.kiwi.nz"
+  ],
   "contributors": [
     "Thomas Gratier <thomas_gratier@yahoo.fr>",
     "Poul Kjeldager Sørensen <pks@s-innovations.net>",
@@ -19,7 +22,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/walkermatt/ol3-layerswitcher/issues"
+    "url": "angular-openlayers-layerswitcher/issues"
   },
   "scripts": {
     "doc": "node_modules/.bin/jsdoc --explain src/ol3-layerswitcher.js | node_modules/.bin/dirtydocs util/README.md > README.md"
