@@ -18,6 +18,7 @@ gulp.task('build', function() {
 
 gulp.task('stylesheets', function() {
   return gulp.src('src/*.css')
+    .pipe(concat('angular-openlayers-layerswitcher.css'))
     .pipe(gulp.dest('dist'));
 });
 

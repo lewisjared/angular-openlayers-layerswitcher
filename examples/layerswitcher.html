@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>OpenLayers 3 - LayerSwitcher</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <link rel="stylesheet" href="http://openlayers.org/en/v3.3.0/css/ol.css" />
-    <link rel="stylesheet" href="../src/ol3-layerswitcher.css" />
-    <link rel="stylesheet" href="layerswitcher.css" />
-  </head>
-  <body>
-    <div id="map"></div>
-    <script src="http://openlayers.org/en/v3.3.0/build/ol.js"></script>
-    <script src="../src/ol3-layerswitcher.js"></script>
-    <script src="layerswitcher.js"></script>
-  </body>
+<html ng-app="demoapp">
+<head>
+  <script src="../bower_components/openlayers3/build/ol-debug.js"></script>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="../bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.js"></script>
+  <script src="../dist/angular-openlayers-layerswitcher.js"></script>
+  <script>
+    var app = angular.module("demoapp", ['openlayers-directive', 'openlayers-layerswitcher']);
+    app.controller('Controller', function() {
+    })
+  </script>
+  <link rel="stylesheet" href="../dist/angular-openlayers-layerswitcher.css" />
+  <link rel="stylesheet" href="layerswitcher.css" />
+  <link rel="stylesheet" href="../bower_components/openlayers3/build/ol.css" />
+</head>
+<body ng-controller="Controller">
+  <openlayers height="100%">
+    <layer-switcher></layer-switcher>
+  </openlayers>
+</body>
 </html>
