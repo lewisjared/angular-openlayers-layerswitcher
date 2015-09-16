@@ -25,13 +25,12 @@
     "url": "angular-openlayers-layerswitcher/issues"
   },
   "scripts": {
-    "doc": "node_modules/.bin/jsdoc --explain src/ol3-layerswitcher.js | node_modules/.bin/dirtydocs util/README.md > README.md"
+    "test": "gulp test"
   },
   "dependencies": {
     "openlayers": "~3.3.0"
   },
   "devDependencies": {
-    "dirtydocs": "0.0.1",
     "expect.js": "~0.3.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
@@ -39,7 +38,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.4.1",
     "jquery": "~1.11.1",
-    "jsdoc": "~3.3.0-beta1",
     "lodash": "~2.4.1",
     "mocha": "~1.20.1"
   }
