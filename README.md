@@ -1,12 +1,37 @@
-# OpenLayers 3 LayerSwitcher
+# angular-openlayers-layerswitcher
 
-Grouped layer list control for an OL3 map.
+An AngularJS directive for selecting visible layers for a [tombatossals/angular-openlayers-directive](https://github.com/tombatossals/angular-openlayers-directive) OpenLayers3 Map.
+The core code for displaying the map have been adapted from [ol3-layerswitcher](https://github.com/walkermatt/ol3-layerswitcher).
+
 
 All layers should have a `title` property and base layers should have a `type` property set to `base`. Group layers (`ol.layer.Group`) can be used to visually group layers together. See [examples/layerswitcher.js](examples/layerswitcher.js) for usage.
 
 ## Demo
 
-Clone or download the repository and open [examples/layerswitcher.html](examples/layerswitcher.html) in a browser or [view the example on RawGit](http://rawgit.com/walkermatt/ol3-layerswitcher/master/examples/layerswitcher.html).
+Clone or download the repository and open [examples/layerswitcher.html](examples/layerswitcher.html) in a browser.
+
+
+## Installing
+
+Install the module from bower:
+
+    bower install --save angular-openlayers-layerswitcher
+
+Add the `openlayers-layerswitcher` module as a dependency to your project:
+
+    // Add Restangular as a dependency to your app
+    angular.module('your-app', ['openlayers-layerswitcher']);
+
+For a complete example see: [examples/layerswitcher.html](examples/layerswitcher.html) 
+
+
+## Usage
+This module defines a single directive element: `layer-switcher`. This directive should be added as a child of an `openlayers` node
+to display a layer switcher:
+
+      <openlayers height="100%">
+        <layer-switcher></layer-switcher>
+      </openlayers>
 
 ## Tests
 
@@ -16,67 +41,8 @@ To run the tests you'll need to install the dependencies via `npm`. In the root 
 
 Then run the tests by opening [test/index.html](test/index.html) in a browser.
 
-## API
-
-### `new ol.control.LayerSwitcher(opt_options)`
-
-OpenLayers 3 Layer Switcher Control.
-See [the examples](./examples) for usage.
-
-#### Parameters:
-
-|Name|Type|Description|
-|:---|:---|:----------|
-|`opt_options`|`Object`| Control options, extends olx.control.ControlOptions adding: **`tipLabel`** `String` - the button tooltip. |
-
-#### Extends
-
-`ol.control.Control`
-
-#### Methods
-
-##### `showPanel()`
-
-Show the layer panel.
-
-##### `hidePanel()`
-
-Hide the layer panel.
-
-##### `renderPanel()`
-
-Re-draw the layer panel to represent the current state of the layers.
-
-##### `setMap(map)`
-
-Set the map instance the control is associated with.
-
-###### Parameters:
-
-|Name|Type|Description|
-|:---|:---|:----------|
-|`map`|`ol.Map`| The map instance. |
-
-
-##### `(static) ol.control.LayerSwitcher.forEachRecursive(lyr,fn)`
-
-**Static** Call the supplied function for each layer in the passed layer group
-recursing nested groups.
-
-###### Parameters:
-
-|Name|Type|Description|
-|:---|:---|:----------|
-|`lyr`|`ol.layer.Group`| The layer group to start iterating from. |
-|`fn`|`function`| Callback which will be called for each `ol.layer.Base` found under `lyr`. The signature for `fn` is the same as `ol.Collection#forEach` |
-
-
 ## License
 
+All the hard work was done by Matt Walker and contributers in [ol3-layerswitcher](https://github.com/walkermatt/ol3-layerswitcher).
 MIT (c) Matt Walker.
-
-## Also see
-
-If you find the layer switcher useful you might also like the
-[ol3-popup](https://github.com/walkermatt/ol3-popup).
 
