@@ -25,7 +25,8 @@
     "url": "angular-openlayers-layerswitcher/issues"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "changelog": "conventional-changelog -p angular-openlayers-layerswitcher -i CHANGELOG.md -w"
   },
   "dependencies": {
     "openlayers": "~3.3.0"
