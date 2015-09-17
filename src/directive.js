@@ -4,7 +4,7 @@ angular.module('openlayers-layerswitcher', ['openlayers-directive'])
       restrict: 'E',
       require: '^openlayers',
       link: function (scope, _, _, controller) {
-        var olControl = new olControlLayerSwitcher();
+        var olControl = olControlLayerSwitcher.control;
         var olScope = controller.getOpenlayersScope();
 
         olScope.getMap().then(function(map) {

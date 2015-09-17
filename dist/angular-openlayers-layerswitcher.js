@@ -4,7 +4,7 @@ angular.module('openlayers-layerswitcher', ['openlayers-directive'])
       restrict: 'E',
       require: '^openlayers',
       link: function (scope, _, _, controller) {
-        var olControl = new olControlLayerSwitcher();
+        var olControl = olControlLayerSwitcher.control;
         var olScope = controller.getOpenlayersScope();
 
         olScope.getMap().then(function(map) {
@@ -17,9 +17,10 @@ angular.module('openlayers-layerswitcher', ['openlayers-directive'])
       }
     };
   }]);
+
 angular.module('openlayers-layerswitcher')
   .factory('olControlLayerSwitcher', function() {
-      var nameParam = 'title';
+      var nameParam = 'name';
 
       /**
        * OpenLayers 3 Layer Switcher Control.
@@ -142,7 +143,7 @@ angular.module('openlayers-layerswitcher')
       ol.control.LayerSwitcher.prototype.ensureTopVisibleBaseLayerShown_ = function() {
           var lastVisibleBaseLyr;
           ol.control.LayerSwitcher.forEachRecursive(this.getMap(), function(l, idx, a) {
-              if (l.get('type') === 'base' && l.getVisible()) {
+              if (l.get('group') === 'base' && l.getVisible()) {
                   lastVisibleBaseLyr = l;
               }
           });
@@ -159,10 +160,10 @@ angular.module('openlayers-layerswitcher')
       ol.control.LayerSwitcher.prototype.setVisible_ = function(lyr, visible) {
           var map = this.getMap();
           lyr.setVisible(visible);
-          if (visible && lyr.get('type') === 'base') {
+          if (visible && lyr.get('group') === 'base') {
               // Hide all other base layers regardless of grouping
               ol.control.LayerSwitcher.forEachRecursive(map, function(l, idx, a) {
-                  if (l != lyr && l.get('type') === 'base') {
+                  if (l != lyr && l.get('group') === 'base') {
                       l.setVisible(false);
                   }
               });
@@ -199,7 +200,7 @@ angular.module('openlayers-layerswitcher')
           } else {
 
               var input = document.createElement('input');
-              if (lyr.get('type') === 'base') {
+              if (lyr.get('group') === 'base') {
                   input.type = 'radio';
                   input.name = 'base';
               } else {
@@ -253,6 +254,9 @@ angular.module('openlayers-layerswitcher')
               }
           });
       };
+      var control = new ol.control.LayerSwitcher;
 
-      return ol.control.LayerSwitcher;
+      return {
+          control: control
+      };
   });
