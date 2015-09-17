@@ -8,16 +8,59 @@
   <script src="../dist/angular-openlayers-layerswitcher.js"></script>
   <script>
     var app = angular.module("demoapp", ['openlayers-directive', 'openlayers-layerswitcher']);
-    app.controller('Controller', function() {
-    })
+    app.controller('Controller', ['$scope', function($scope) {
+        $scope.layers = [
+            {
+                name: 'Italy',
+                group: 'Other',
+                source: {
+                    type: 'GeoJSON',
+                    url: 'json/ITA.geo.json'
+                }
+            },
+            {
+                name: 'France',
+                group: 'GeoJSON',
+                source: {
+                    type: 'GeoJSON',
+                    url: 'json/FRA.geo.json'
+                }
+            },
+            {
+                name: 'Spain',
+                group: 'GeoJSON',
+                source: {
+                    type: 'GeoJSON',
+                    url: 'json/ESP.geo.json'
+                }
+            },
+            {
+                name: 'Lisbon',
+                group: 'GeoJSON',
+                source: {
+                    type: 'GeoJSON',
+                    url: 'json/LIS.geo.json'
+                }
+            },
+            {
+                //No Group so should be top level
+                name: 'OSM',
+                group: 'base',
+                source: {
+                    type: 'OSM'
+                }
+            }
+        ]
+    }])
   </script>
   <link rel="stylesheet" href="../dist/angular-openlayers-layerswitcher.css" />
   <link rel="stylesheet" href="layerswitcher.css" />
   <link rel="stylesheet" href="../bower_components/openlayers3/build/ol.css" />
 </head>
 <body ng-controller="Controller">
-  <openlayers height="100%">
+  <openlayers height="100%" custom-layers="true">
     <layer-switcher></layer-switcher>
+    <ol-layer ol-layer-properties="layer" ng-repeat="layer in layers"></ol-layer>
   </openlayers>
 </body>
 </html>
