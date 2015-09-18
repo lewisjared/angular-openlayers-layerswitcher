@@ -1,3 +1,25 @@
+<a name="0.2.0"></a>
+# 0.2.0 (2015-09-18)
+
+
+### chore
+
+* chore(ol3): using lewisjared fork of angular-openlayers-directive ([b74ac68](https://github.com/lewisjared/angular-openlayers-layerswitcher/commit/b74ac68))
+
+### docs
+
+* docs(examples): update example to use proposed ol syntax ([20a2b05](https://github.com/lewisjared/angular-openlayers-layerswitcher/commit/20a2b05))
+
+### feat
+
+* feat: change layer params ([c1262e5](https://github.com/lewisjared/angular-openlayers-layerswitcher/commit/c1262e5))
+
+### style
+
+* style(overlay): scaled icon to overlay size ([0549efd](https://github.com/lewisjared/angular-openlayers-layerswitcher/commit/0549efd))
+
+
+
 <a name="0.1.1"></a>
 ## 0.1.1 (2015-09-16)
 
