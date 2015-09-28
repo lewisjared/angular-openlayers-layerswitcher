@@ -1,6 +1,6 @@
 {
   "name": "angular-openlayers-layerswitcher",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Layer switcher control for OpenLayers 3",
   "repository": {
     "type": "git",

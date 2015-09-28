@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2015-09-28)
+
+
+### chore
+
+* chore(ol3): change back to using angular-openlayers-directive ([e838f1c](https://github.com/lewisjared/angular-openlayers-layerswitcher/commit/e838f1c))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2015-09-18)
 
