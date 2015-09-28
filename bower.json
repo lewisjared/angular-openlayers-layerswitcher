@@ -25,6 +25,6 @@
     "test"
   ],
   "dependencies": {
-    "angular-openlayers-directive": "lewisjared/angular-openlayers-directive#ol-group"
+    "angular-openlayers-directive": "^1.1.0"
   }
 }
